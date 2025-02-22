@@ -37,7 +37,8 @@ public class PlaywrightTest {
         page.navigate("https://christianbaumann.dev/");
 
         // Assert
-        assertTrue(page.title().contains("Christian Baumann"), "Page title should contain 'Christian Baumann'");
+//        assertEquals("Christian Baumann", page.title(), "Page title should equal 'Christian Baumann'");
+        assertEquals("Frodo Baggins", page.title(), "Page title should equal 'Christian Baumann'");
         logTestInfo(testInfo, "✅ Title validation successful (CB).");
     }
 
