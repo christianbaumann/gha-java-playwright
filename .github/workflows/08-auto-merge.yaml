@@ -5,7 +5,7 @@ on:
 
 permissions:
   contents: read  # Required to checkout code (only needed on private repos)
-  pull-requests: write # Required to allow merging pull requests
+  pull-requests: write  # Required to allow merging pull requests
 
 jobs:
   auto-merge:
@@ -19,6 +19,6 @@ jobs:
       - name: Enable Auto-Merge
         uses: peter-evans/enable-pull-request-automerge@v3
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}  # Use the PAT instead
           pull-request-number: ${{ github.event.pull_request.number }}
           merge-method: squash
