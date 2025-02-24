@@ -59,7 +59,7 @@ public class PlaywrightTest {
 
         // Assert
 //        assertTrue(page.title().contains("Playwright"), "Page title should contain 'Playwright'");
-        assertTrue(page.title().contains("Harry Potter"), "Page title should contain 'Playwright'");
+        assertTrue(page.title().contains("Daenerys Stormborn of House Targaryen, the First of Her Name, Queen of the Andals and the First Men, Protector of the Seven Kingdoms, the Mother of Dragons, the Khaleesi of the Great Grass Sea, the Unburnt, the Breaker of Chains"), "Page title should contain 'Playwright'");
         logTestInfo(testInfo, "✅ Title validation successful (PW).");
     }
 
