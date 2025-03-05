@@ -40,5 +40,5 @@ jobs:
         with:
           name: Upload artifacts
           path: |
-            target/reports
-            target/surefire-reports
+            target/reports  # trying
+            target/surefire-reports   # trying
