@@ -99,6 +99,14 @@ public class PlaywrightTest {
         logTestInfo(testInfo, "✅ Navigation to API page successful.");
     }
 
+    @Test
+    public void testHomePage() {
+    System.out.println("Playwright test started...");
+    page.navigate("https://example.com");
+    assertEquals("Example Domain", page.title());
+    }
+
+
     @AfterEach
     void tearDownTest() {
         page.close();
