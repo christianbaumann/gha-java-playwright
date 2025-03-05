@@ -36,9 +36,15 @@ jobs:
         run: mvn test surefire-report:report
 
       - name: Upload Test Reports  # Uploads test results as artifacts for later review.
+#        uses: actions/upload-artifact@v4
+#        with:
+#          name: test-artifacts  # The artifact name displayed in GitHub Actions.
+#          path: |
+#            target/reports/  # Directory containing Playwright reports.
+#            target/surefire-reports/  # Directory containing Maven's Surefire test reports.
         uses: actions/upload-artifact@v4
         with:
-          name: test-artifacts  # The artifact name displayed in GitHub Actions.
+          name: Upload artifacts
           path: |
-            target/reports  # Directory containing Playwright reports.
-            target/surefire-reports  # Directory containing Maven's Surefire test reports.
+            target/reports
+            target/surefire-reports
