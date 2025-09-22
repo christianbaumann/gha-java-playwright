@@ -25,13 +25,14 @@ jobs:
           key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
           # Generates a unique cache key based on OS and pom.xml hash.
           restore-keys: |
-            ${{ runner.os }}-maven-  # Fallback key if an exact match isn't found.
+            ${{ runner.os }}-maven-
+          # Fallback key if an exact match isn't found.
 
       - name: Build & Install
         run: mvn -B install -D skipTests --no-transfer-progress
 
       - name: Install Playwright Browsers
-        run: mvn exec:java -e -D exec.mainClass=com.microsoft.playwright.CLI -D exec.args="install --with-deps"
+        run: mvn exec:java -e -D exec.mainClass=com.microsoft.playwright.CLI -Dexec.args="install --with-deps"
 
       - name: Run tests
         run: mvn test
