@@ -28,7 +28,7 @@ cd gha-java-playwright
 1. Go to **_your fork_** on GitHub: `https://github.com/$yourGithubUsername/gha-typescript-playwright`
 2. Click on `Settings`.
 3. Scroll all the way down to `Danger Zone`.
-4. Click `Leave for network` (and follow the wizard).
+4. Click `Leave fork network` (and follow the wizard).
 
 ### 4️⃣ Install Dependencies
 
