@@ -9,17 +9,21 @@ jobs:
     name: Containerized Testing
     runs-on: ubuntu-latest
     container:
-      image: maven:latest  # Uses the latest Maven container.
+      image: mcr.microsoft.com/playwright/java:v1.56.1-noble
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Build & Install
-        run: mvn -B install -D skipTests --no-transfer-progress
+      # Optional: only needed if you require a different JDK version
+      # - name: Setup Java
+      #   uses: actions/setup-java@v5
+      #   with:
+      #     distribution: 'temurin'
+      #     java-version: '17'
 
-      - name: Install Playwright Browsers
-        run: mvn exec:java -e -D exec.mainClass=com.microsoft.playwright.CLI -Dexec.args="install --with-deps"
+      - name: Build (skip tests)
+        run: mvn -B install -DskipTests --no-transfer-progress
 
       - name: Run tests
         run: mvn test
