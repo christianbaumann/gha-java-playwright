@@ -1,0 +1,25 @@
+name: Containerized Testing
+
+on:
+  push:  # Triggers the workflow on every push event.
+  pull_request:  # Also triggers the workflow on every pull request.
+
+jobs:
+  tests:
+    name: Containerized Testing
+    runs-on: ubuntu-latest
+    container:
+      image: maven:latest  # Uses the latest Maven container.
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Build & Install
+        run: mvn -B install -D skipTests --no-transfer-progress
+
+      - name: Install Playwright Browsers
+        run: mvn exec:java -e -D exec.mainClass=com.microsoft.playwright.CLI -Dexec.args="install --with-deps"
+
+      - name: Run tests
+        run: mvn test
