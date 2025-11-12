@@ -7,6 +7,7 @@ import org.junit.jupiter.api.*;
 
 import java.nio.file.Paths;
 import java.util.logging.Logger;
+import java.util.regex.Pattern;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -70,7 +71,7 @@ public class PlaywrightTest {
         page.navigate("https://playwright.dev/");
 
         // Act
-        page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Search (Ctrl+K)")).click();
+        page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName(Pattern.compile("Search \\((Command|Ctrl)\\+K\\)"))).click();
         page.getByRole(AriaRole.SEARCHBOX, new Page.GetByRoleOptions().setName("Search")).fill("locator");
         page.getByRole(AriaRole.LINK, new Page.GetByRoleOptions().setName("Locators").setExact(true)).click();
 
