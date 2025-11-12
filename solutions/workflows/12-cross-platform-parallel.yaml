@@ -38,4 +38,5 @@ jobs:
         run: mvn exec:java -e -Dexec.mainClass=com.microsoft.playwright.CLI -Dexec.args="install --with-deps"
 
       - name: Run tests
+        shell: bash
         run: mvn test -Dplaywright.browserName=${{ matrix.browser }}
