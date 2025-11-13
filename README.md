@@ -8,9 +8,10 @@ This repository contains end-to-end UI tests using [Playwright](https://playwrig
 
 ### 1️⃣ Prerequisites
 
-- Java 21
-- Maven
+
 - IDE or editor of choice
+- [Optional:] Java 21
+- [Optional:] Maven
 
 ### 2️⃣ Fork the repo
 
@@ -30,13 +31,13 @@ cd gha-java-playwright
 3. Scroll all the way down to `Danger Zone`.
 4. Click `Leave fork network` (and follow the wizard).
 
-### 4️⃣ Install Dependencies
+### 4️⃣ [Optional:] Install Dependencies
 
 ```sh
 mvn install
 ```
 
-### 5️⃣ Run Tests
+### 5️⃣ [Optional:] Run Tests
 
 ```sh
 mvn test
